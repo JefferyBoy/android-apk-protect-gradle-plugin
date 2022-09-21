@@ -1,0 +1,28 @@
+buildscript {
+    repositories {
+        google()
+        mavenLocal()
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url 'https://jitpack.io' }
+    }
+    dependencies {
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10'
+        classpath 'com.android.tools.build:gradle:7.0.3'
+//        classpath project(':android-apk-protect')
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenLocal()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        gradlePluginPortal()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

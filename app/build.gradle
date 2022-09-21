@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'android.apk.protect'
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.github.jeffery.protect"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        release {
+            storeFile file('../android.jks')
+            storePassword '12345678'
+            keyPassword '12345678'
+            keyAlias 'android'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
+
+//Properties localProperties = new Properties()
+//localProperties.load(new FileInputStream(new File(project.rootDir, "local.properties")));
+//// apk加固配置，腾讯云对象存储用来上传apk
+//// 加固完成后自动下载apk并签名，打印出加固后的apk文件路径
+//// release版本请配置好singingConfig签名
+//apkprotect {
+//    tencentCloudSecretId = localProperties.get("tencentCloudSecretId")
+//    tencentCloudSecretKey = localProperties.get("tencentCloudSecretKey")
+//    tencentCloudCosBucket = localProperties.get("tencentCloudCosBucket")
+//    tencentCloudCosRegion = localProperties.get("tencentCloudCosRegion")
+//    tencentCloudCosDeleteFileAfterTask = true
+//}
