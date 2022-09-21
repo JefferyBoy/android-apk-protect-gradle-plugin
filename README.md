@@ -12,7 +12,7 @@ buildscript {
         maven { url 'https://jitpack.io' }
     }
     dependencies {
-        classpath 'com.github.JefferyBoy:android-apk-protect:1.0.0'
+        classpath 'com.github.JefferyBoy:android-apk-protect-gradle-plugin:1.0.1'
     }
 }
 ```

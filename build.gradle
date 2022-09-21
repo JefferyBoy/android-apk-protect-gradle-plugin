@@ -7,9 +7,9 @@ buildscript {
         maven { url 'https://jitpack.io' }
     }
     dependencies {
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10'
         classpath 'com.android.tools.build:gradle:7.0.3'
-//        classpath project(':android-apk-protect')
+//        classpath 'com.github.JefferyBoy:android-apk-protect-gradle-plugin:1.0.1'
+//        classpath project(':android-apk-protect-plugin')
     }
 }
 
