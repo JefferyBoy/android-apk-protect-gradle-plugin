@@ -1,5 +1,8 @@
 # 安卓应用加固gradle插件
 
+此项目停止维护，请移步到新项目 [wow-gradle-plugins](https://github.com/JefferyBoy/wow-gradle-plugins)
+
+
 运行gradle任务，由gradle插件完成应用的加固过程
 
 使用腾讯应用加固服务，需要配置腾讯云的密钥、对象存储库
